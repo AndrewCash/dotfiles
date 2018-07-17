@@ -13,3 +13,4 @@ set showmatch
 
 inoremap jk <esc>
 
+set noswapfile

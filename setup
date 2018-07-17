@@ -5,3 +5,4 @@ cp .aliases ~
 cp .bashrc ~
 cp .gitconfig ~
 cp .vimrc ~
+cp .tmux.conf ~
