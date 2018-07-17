@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Installing dotfiles to home directory..."
+cp .aliases ~
+cp .bashrc ~
+cp .gitconfig ~
+cp .vimrc ~
