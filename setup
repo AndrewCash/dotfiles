@@ -6,3 +6,10 @@ cp .bashrc ~
 cp .gitconfig ~
 cp .vimrc ~
 cp .tmux.conf ~
+
+echo "Installing updates..."
+sudo apt-get update
+sudo apt-get upgrade
+
+echo "Installing software..."
+sudo apt-get install vim htop docker deluge deluged deluge-console
