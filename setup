@@ -8,11 +8,11 @@ cp .vimrc ~
 cp .tmux.conf ~
 
 echo "Installing updates..."
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
 
 echo "Installing software..."
-sudo apt-get install vim htop deluge deluged deluge-console unace unrar zip unzip p7zip-full p7zip-rar screenfetch
+sudo apt install vim htop deluge deluged deluge-console unace unrar zip unzip p7zip-full p7zip-rar screenfetch
 
 echo "Add repositories"
 sudo add-apt-repository -y ppa:transmissionbt/ppa
