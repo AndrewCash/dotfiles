@@ -23,11 +23,18 @@ sudo apt update
 sudo apt upgrade
 fi
 
-read -p "Install software? " -n 1 -r
+read -p "Install Java? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install openjdk-8-jre openjdk-8-jdk
+fi
+
+read -p "Install additional programs? " -n 1 -r
 echo   # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then "Installing vim htop deluge deluged deluge-console unace unrar zip unzip p7zip-full p7zip-rar screenfetch"
-sudo apt install vim htop deluge deluged deluge-console unace unrar zip unzip p7zip-full p7zip-rar screenfetch
+sudo apt install vim htop deluge deluged deluge-console unace unrar zip unzip p7zip-full p7zip-rar screenfetch 
 fi
 
 read -p "Add extra repositories? " -n 1 -r
