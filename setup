@@ -20,6 +20,6 @@ read -p "Make tmux pretty? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-echo "Installing dotfile to home directory..."
+echo "--  Installing dotfile to home directory..."
 cp .tmux.conf ~
 fi
