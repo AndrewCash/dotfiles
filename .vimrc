@@ -46,3 +46,6 @@ set undodir=~/.vim/undo/
 
 "Save as sudo with w!! (when lacking root)
 cmap w!! w !sudo tee % >/dev/null
+
+"Display line at 80th character on a line
+set colorcolumn=80
