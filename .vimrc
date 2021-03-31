@@ -40,5 +40,7 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-
+" Keep undo history between sessions
+set undofile
+set undodir=~/.vim/undo/
 
