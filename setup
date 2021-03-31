@@ -1,22 +1,24 @@
 #!/bin/bash
 
-read -p "Install vim? " -n 1 -r
+read -p "Setup vim? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-echo "Installing vim..."
+echo "-- Installing vim..."
 sudo apt update
 sudo apt install git vim curl
+echo "-- Installing vim pathogen..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.vim/bundle
+echo "-- Cloning vim packages..."
 git clone https://github.com/preservim/nerdtree
 git clone https://github.com/tpope/vim-surround
 git clone https://github.com/altercation/vim-colors-solarized 
 fi
 
 
-read -p "Make tmux pretty? " -n 1 -r
+read -p "Setup tmux? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
