@@ -44,3 +44,5 @@ set wildmenu
 set undofile
 set undodir=~/.vim/undo/
 
+"Save as sudo with w!! (when lacking root)
+cmap w!! w !sudo tee % >/dev/null
