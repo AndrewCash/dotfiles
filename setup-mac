@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "Installing dotfiles to home directory..."
-ln -s .aliases ~
-ln -s .bashrc ~
-ln -s .gitconfig ~
-ln -s .vimrc ~
-ln -s .tmux.conf ~

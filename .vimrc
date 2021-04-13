@@ -28,7 +28,7 @@ set ruler         " show the cursor position all the time
 set mouse=a
 
 set term=xterm-256color
-colo solarized
+"colo solarized
 
 "   Fuzzy Finder
 "   - Hit tab to :find by partial matching
