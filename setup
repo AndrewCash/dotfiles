@@ -3,7 +3,7 @@ initDir=`pwd`
 
 read -p "Update packages? [Y/n]" -n 1 -r
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $REPLY =~ ^[Yy]|[]$ ]]
 then
     echo "-- Installing package updates..."
         sudo apt update
@@ -14,6 +14,13 @@ read -p "Setup vim? [Y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    read -p "- Install vim, tmux, git, and curl? [Y/n]" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        echo "-- Installing packages..."
+            sudo apt install vim tmux git curl
+        fi
     echo "-- Installing vim pathogen..."
         mkdir -p ~/.vim/autoload ~/.vim/bundle
         curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
