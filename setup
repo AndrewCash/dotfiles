@@ -10,35 +10,28 @@ then
         sudo apt upgrade -y
 fi
 
-
 read -p "Setup vim? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-#echo "-- Installing vim..."
-#sudo apt update
-#sudo apt install git vim curl
-echo "-- Installing vim pathogen..."
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-cd ~/.vim/bundle
-echo "-- Cloning vim packages..."
-git clone https://github.com/preservim/nerdtree
-git clone https://github.com/tpope/vim-surround
-git clone https://github.com/altercation/vim-colors-solarized 
-
-echo "-- Copying dotfiles..."
-cd $initDir
-cp ./.vimrc ~
-
+    echo "-- Installing vim pathogen..."
+        mkdir -p ~/.vim/autoload ~/.vim/bundle
+        curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo "-- Cloning vim packages..."
+        cd ~/.vim/bundle
+        git clone https://github.com/preservim/nerdtree
+        git clone https://github.com/tpope/vim-surround
+        git clone https://github.com/altercation/vim-colors-solarized 
+    echo "-- Copying dotfiles..."
+        cd $initDir
+        cp ./.vimrc ~
 fi
-
 
 read -p "Setup tmux? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-echo "--  Installing dotfile to home directory..."
-cd $initDir
-cp ./.tmux.conf ~ 
+    echo "--  Installing dotfile to home directory..."
+        cd $initDir
+        cp ./.tmux.conf ~ 
 fi
