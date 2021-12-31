@@ -34,7 +34,7 @@ then
         cp ./.vimrc ~
 fi
 
-read -p "Setup tmux? " -n 1 -r
+read -p "Setup tmux? [Y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
