@@ -1,7 +1,7 @@
 #!/bin/bash
 initDir=`pwd`
 
-read -p "Update packages? " -n 1 -r
+read -p "Update packages? [Y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -10,7 +10,7 @@ then
         sudo apt upgrade -y
 fi
 
-read -p "Setup vim? " -n 1 -r
+read -p "Setup vim? [Y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
