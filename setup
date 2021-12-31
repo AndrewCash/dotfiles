@@ -3,7 +3,7 @@ initDir=`pwd`
 
 read -p "Update packages? [Y/n]" -n 1 -r
 echo
-if [[ $REPLY =~ ^[Yy]|[]$ ]]
+if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "-- Installing package updates..."
         sudo apt update
@@ -12,7 +12,7 @@ fi
 
 read -p "Add aliases? [Y/n]" -n 1 -r
 echo
-if [[ $REPLY =~ ^[Yy]|[]$ ]]
+if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "-- Copying aliases..."
         cd $initDir
