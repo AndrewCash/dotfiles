@@ -10,6 +10,15 @@ then
         sudo apt upgrade -y
 fi
 
+read -p "Add aliases? [Y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]|[]$ ]]
+then
+    echo "-- Copying aliases..."
+        cd $initDir
+        cp ./configs/.aliases ~
+fi
+
 read -p "Setup vim? [Y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
