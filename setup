@@ -31,7 +31,7 @@ then
         git clone https://github.com/altercation/vim-colors-solarized 
     echo "-- Copying dotfiles..."
         cd $initDir
-        cp ./.vimrc ~
+        cp ./configs/.vimrc ~
 fi
 
 read -p "Setup tmux? [Y/n]" -n 1 -r
@@ -40,5 +40,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "--  Installing dotfile to home directory..."
         cd $initDir
-        cp ./.tmux.conf ~ 
+        cp ./configs/.tmux.conf ~ 
 fi
