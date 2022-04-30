@@ -1,0 +1,242 @@
+[33mcommit 1a08621c78ce441abaed117b2e53dc53123a9575[m[33m ([m[1;36mHEAD -> [m[1;32mansible[m[33m, [m[1;32mssh[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Mon Mar 28 22:21:06 2022 -0500
+
+    Add ssh config
+
+[33mcommit ff5be9de1d1d2a90f927b28114f600b0aa69e053[m[33m ([m[1;31mssh/master[m[33m)[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:35:27 2021 -0600
+
+    Fix typo
+
+[33mcommit d5ce8182797a60ed8372b182a251a4aabcee976d[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:33:44 2021 -0600
+
+    Add option to add aliases
+
+[33mcommit 9fc24266b7d79ba171c0c4ae7c1ddf0c1c8b5b58[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:30:36 2021 -0600
+
+    Move config files to dir and remove useless files
+
+[33mcommit fc8f4d98e732fd4fa29bb13c6bf2e9d9235af08c[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:26:47 2021 -0600
+
+    Add missing [Y/n]
+
+[33mcommit 373733b791b6808739489013c126724946be39b3[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:11:57 2021 -0600
+
+    Install packages when setting up vim
+
+[33mcommit 275fcad617aedff32013a7c0e46b9dbae011ec5b[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 03:04:17 2021 -0600
+
+    Show options when asking for input
+
+[33mcommit 45b786c9416ba29040628bcd3833f64652ebfc5f[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 02:54:59 2021 -0600
+
+    Spice up whitespace
+
+[33mcommit 0448768421bc8fa6930a1aa1c7b0765c7cb37376[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 02:50:55 2021 -0600
+
+    Add option to update packages (debian based os)
+
+[33mcommit 82a9f1bc3d21ffbccab9c3c54023607f13e92b78[m
+Author: Andrew Cash <andrew@csh.casa>
+Date:   Fri Dec 31 02:47:12 2021 -0600
+
+    Fix error caused by being in wrong dir
+
+[33mcommit 15eda3d2e618ddce743d371b069141d431543d70[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Tue Apr 13 02:40:41 2021 -0500
+
+    Change setup script
+
+[33mcommit e40f576b3153c119ee5c371f5b18c7dcf7f3c691[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Wed Mar 31 11:31:53 2021 -0500
+
+    Display line at 80th character on a line
+
+[33mcommit 9da7c8497968b8e5e1ac1efa50f949f10ec3f74c[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Wed Mar 31 11:31:01 2021 -0500
+
+    Save as sudo with wgit add .vimrc
+
+[33mcommit b31a2fc6af06a076092017ec7c2b308489ed58bd[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Wed Mar 31 11:27:17 2021 -0500
+
+    Change text in setup script
+
+[33mcommit e34a597de272c8b9209867d5e721de8b2a012b28[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Wed Mar 31 11:26:57 2021 -0500
+
+    Add undo history
+
+[33mcommit 8c6937d2aec6336a898fcbf29b47e8d26c2876b4[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Mon Mar 29 02:58:11 2021 -0500
+
+    Change script text
+
+[33mcommit b68f478f7f58f435c550e6aed1fd107aa68d7ac8[m
+Merge: e312a86 c4d9ca4
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Mon Mar 29 02:55:27 2021 -0500
+
+    Merge branch 'master' of https://github.com/andrewcash/dotfiles
+
+[33mcommit e312a8642d9d214275a27f78eb7942a4a887236c[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Mon Mar 29 02:55:10 2021 -0500
+
+    Move dwm stuff to its own folder
+
+[33mcommit c4d9ca4ed32555b8c763a0ac5f6ec974ccd27723[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Sat Mar 27 15:34:21 2021 -0400
+
+    Add option to move panes to other windows in tmux
+
+[33mcommit fa8867eaf269b854132ed50ce29de0cba9dcf1d6[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Tue Mar 16 16:32:08 2021 -0500
+
+    Add changes to tmux
+
+[33mcommit 754db32237a921cd33f2af2f26fbbdee82488ffd[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Wed Mar 3 01:04:01 2021 -0600
+
+    Add dwm stuff
+
+[33mcommit 5d0f75ebca047b44f34ef665e1e3dc9ddc2eafbf[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Sat Feb 27 04:39:00 2021 -0600
+
+    Update setup script
+
+[33mcommit 85fa815b8fdf035707c21cd6985791bfed17ac94[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Sat May 30 00:29:27 2020 -0500
+
+    update vimrc
+
+[33mcommit 530b7f24104a2e5ed66c3138b81d6acd2905ba91[m
+Merge: d790719 ecd2e2b
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Fri May 15 02:11:39 2020 -0500
+
+    Fix merge conflicts
+
+[33mcommit d790719a9967e4832d0b51d9167f92ed3c5185ea[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Wed May 13 02:22:48 2020 -0500
+
+    Setup creats symbolic links. Add vim plugins.
+
+[33mcommit ecd2e2b5253f1e36995d0d1332654088de6cf3c9[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Fri Feb 1 00:35:33 2019 -0600
+
+    Install Java
+
+[33mcommit c7e3f39001ef56e78db552f73f9529cd4df41326[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Fri Feb 1 00:24:42 2019 -0600
+
+    Added user prompt to confirm each step
+
+[33mcommit 81bbba24b87f000703d2c1a5509713c7402997b9[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Thu Jan 31 17:50:25 2019 -0600
+
+    Remove unnecessary "-get"
+
+[33mcommit 904217b89bcc2458d2f939eaabad543c80b521e2[m
+Author: Andrew Cash <asc010@uark.edu>
+Date:   Thu Jan 31 17:49:57 2019 -0600
+
+    Install screenfetch
+
+[33mcommit ed30c228456e114ae5e5ef7dfdba632426c93d59[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Wed Jul 18 18:24:02 2018 -0500
+
+    correctly install docker
+
+[33mcommit 979e1ebb83c96cd7db9bcd0e73df08341d93fd5f[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Wed Jul 18 18:03:30 2018 -0500
+
+    Added ppa's
+
+[33mcommit 5abb32edc583c97b82320faf369ed0b1ff3b1d6d[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 17 22:12:40 2018 -0500
+
+    setup now installs useful software
+
+[33mcommit b5e3c63958e8af22edd327b6f0631fc898fbd978[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 17 03:01:47 2018 +0000
+
+    Add ruler, autowrite, and comments
+
+[33mcommit e011b6082c6c9be9487a0677319392fe7d465854[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 17 02:54:28 2018 +0000
+
+    Add tmux.conf. Vim doesn't make swap files.
+
+[33mcommit 1aa47203a37511b6d0114493f2e2d30e95fe4cba[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 17 02:35:46 2018 +0000
+
+    added installation script
+
+[33mcommit d9ecacb784424617a69113abcde952fadfa79bc8[m
+Author: Andrew Cash <cashandrew41@gmail.com>
+Date:   Tue Jul 17 02:30:44 2018 +0000
+
+    Removed unnecessary files
+
+[33mcommit e2175fb44790ce2afb0c69a37ae3e4a1c9b7b5fb[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 10 14:46:32 2018 -0500
+
+    Removed odd ' from line that was screwing up the formatting of lines below
+
+[33mcommit 9e57353beced16dd16c3711bc7d3648539e38fc0[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 10 14:14:38 2018 -0500
+
+    Prompt tells what git branch you
+    re on
+
+[33mcommit b24caf36cc99436202a5501d1ec04742aa77a124[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 10 14:12:15 2018 -0500
+
+    add parse git branch to bashrc. also commented out line that didnt seem complete
+
+[33mcommit 6bdb17dfa5be30d8ee243d683500bc2cc7256eae[m
+Author: AndrewCash <asc010@uark.edu>
+Date:   Tue Jul 10 14:05:52 2018 -0500
+
+    Initial commit
