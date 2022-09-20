@@ -1,15 +1,6 @@
 #!/bin/bash
 initDir=`pwd`
 
-read -p "Update packages? [y/n]" -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "-- Installing package updates..."
-        sudo apt update
-        sudo apt upgrade -y
-fi
-
 read -p "Add aliases? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
