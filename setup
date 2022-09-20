@@ -1,7 +1,7 @@
 #!/bin/bash
 initDir=`pwd`
 
-read -p "Add aliases? [y/n]" -n 1 -r
+read -p "Add aliases? [y/n]" yn
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -10,24 +10,25 @@ then
         cp ./configs/.aliases ~
 fi
 
-read -p "Setup vim? [y/n]" -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "-- Installing vim pathogen..."
-        mkdir -p ~/.vim/autoload ~/.vim/bundle
-        curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    echo "-- Cloning vim packages..."
-        cd ~/.vim/bundle
-        git clone https://github.com/preservim/nerdtree
-        git clone https://github.com/tpope/vim-surround
-        git clone https://github.com/altercation/vim-colors-solarized 
-    echo "-- Copying dotfiles..."
-        cd $initDir
-        cp ./configs/.vimrc ~
-fi
+read -p "Setup vim? [y/n]" yn
+case $yn in
+    [Yy]* ) 
+        echo "-- Installing vim pathogen..."
+            mkdir -p ~/.vim/autoload ~/.vim/bundle
+            curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+        echo "-- Cloning vim packages..." 
+            git clone https://github.com/preservim/nerdtree ~/.vim/bundle
+            git clone https://github.com/tpope/vim-surround ~/.vim/bundle
+            git clone https://github.com/altercation/vim-colors-solarized ~/.vim/bundle
+        echo "-- Copying dotfiles..."
+            cd $initDir
+            cp ./configs/.vimrc ~
+        ;;
+    [Nn]* )
+        ;;
+esac
 
-read -p "Setup tmux? [y/n]" -n 1 -r
+read -p "Setup tmux? [y/n]" yn
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
