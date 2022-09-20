@@ -2,13 +2,15 @@
 initDir=`pwd`
 
 read -p "Add aliases? [y/n]" yn
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "-- Copying aliases..."
+case $yn in
+    [Yy]* ) 
+        echo "-- Copying aliases..."
         cd $initDir
         cp ./configs/.aliases ~
-fi
+        ;;
+    [Nn]* )
+        ;;
+esac
 
 read -p "Setup vim? [y/n]" yn
 case $yn in
@@ -29,10 +31,14 @@ case $yn in
 esac
 
 read -p "Setup tmux? [y/n]" yn
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "--  Installing dotfile to home directory..."
+case $yn in
+    [Yy]* ) 
+        echo "--  Installing dotfile to home directory..."
         cd $initDir
         cp ./configs/.tmux.conf ~ 
-fi
+        ;;
+    [Nn]* )
+        ;;
+esac
+
+
