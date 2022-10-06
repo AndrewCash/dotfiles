@@ -19,9 +19,9 @@ case $yn in
             mkdir -p ~/.vim/autoload ~/.vim/bundle
             curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
         echo "-- Cloning vim packages..." 
-            git clone https://github.com/preservim/nerdtree ~/.vim/bundle
-            git clone https://github.com/tpope/vim-surround ~/.vim/bundle
-            git clone https://github.com/altercation/vim-colors-solarized ~/.vim/bundle
+            git -C ~/.vim/bundle clone https://github.com/preservim/nerdtree
+            git -C ~/.vim/bundle clone https://github.com/tpope/vim-surround
+            git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
         echo "-- Copying dotfiles..."
             cd $initDir
             cp ./configs/.vimrc ~
