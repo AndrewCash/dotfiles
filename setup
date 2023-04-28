@@ -3,42 +3,42 @@ initDir=`pwd`
 
 read -p "Add aliases? [y/n]" yn
 case $yn in
-    [Yy]* ) 
-        echo "-- Copying aliases..."
-        cd $initDir
-        cp ./configs/.aliases ~
-        ;;
-    [Nn]* )
-        ;;
+	[Yy]* ) 
+		echo "-- Copying aliases..."
+		cd $initDir
+		cp ./configs/.aliases ~
+		;;
+	[Nn]* )
+		;;
 esac
 
 read -p "Setup vim? [y/n]" yn
 case $yn in
-    [Yy]* ) 
-        echo "-- Installing vim pathogen..."
-            mkdir -p ~/.vim/autoload ~/.vim/bundle
-            curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-        echo "-- Cloning vim packages..." 
-            git -C ~/.vim/bundle clone https://github.com/preservim/nerdtree
-            git -C ~/.vim/bundle clone https://github.com/tpope/vim-surround
-            git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
-        echo "-- Copying dotfiles..."
-            cd $initDir
-            cp ./configs/.vimrc ~
-        ;;
-    [Nn]* )
-        ;;
+	[Yy]* ) 
+		echo "-- Installing vim pathogen..."
+		mkdir -p ~/.vim/autoload ~/.vim/bundle
+		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+		echo "-- Cloning vim packages..." 
+		git -C ~/.vim/bundle clone https://github.com/preservim/nerdtree
+		git -C ~/.vim/bundle clone https://github.com/tpope/vim-surround
+		git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
+		echo "-- Copying dotfiles..."
+		cd $initDir
+		cp ./configs/.vimrc ~
+		;;
+	[Nn]* )
+		;;
 esac
 
 read -p "Setup tmux? [y/n]" yn
 case $yn in
-    [Yy]* ) 
-        echo "--  Installing dotfile to home directory..."
-        cd $initDir
-        cp ./configs/.tmux.conf ~ 
-        ;;
-    [Nn]* )
-        ;;
+	[Yy]* ) 
+		echo "--  Installing dotfile to home directory..."
+		cd $initDir
+		cp ./configs/.tmux.conf ~ 
+		;;
+	[Nn]* )
+		;;
 esac
 
 
