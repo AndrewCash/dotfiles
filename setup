@@ -1,44 +1,49 @@
 #!/bin/bash
-initDir=$(pwd)
 
+INIT_DIR=$(pwd)
+ALIASES_DIR=./configs/.aliases
+VIMRC=./configs/vimrc
+TMUX_CONF=./configs/tmux.conf
+VIM_BUNDLE_DIR=~/.vim/bundle
+
+function copy_aliases {
+    echo "-- Copying aliases..."
+    cd "$INIT_DIR" || exit
+    cp "$ALIASES_DIR" ~
+}
+
+function setup_vim {
+    echo "-- Installing vim pathogen..."
+    mkdir -p ~/.vim/autoload ~/.vim/bundle
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo "-- Cloning vim packages..." 
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/preservim/nerdtree
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/tpope/vim-surround
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/altercation/vim-colors-solarized
+    echo "-- Copying dotfiles..."
+    cd "$INIT_DIR" || exit
+    cp "$VIMRC" ~/.vimrc
+}
+
+function setup_tmux {
+    echo "-- Installing dotfile to home directory..."
+    cd "$INIT_DIR" || exit
+    cp "$TMUX_CONF" ~/.tmux.conf
+}
+
+# Ask user for input
 read -rp "Add aliases? [y/n] " yn
-case $yn in
-	[Yy]* ) 
-		echo "-- Copying aliases..."
-		cd "$initDir" || exit 
-		cp ./configs/.aliases ~
-		;;
-	[Nn]* )
-		;;
-esac
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    copy_aliases
+fi
 
 read -rp "Setup vim? [y/n] " yn
-case $yn in
-	[Yy]* ) 
-		echo "-- Installing vim pathogen..."
-		mkdir -p ~/.vim/autoload ~/.vim/bundle
-		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-		echo "-- Cloning vim packages..." 
-		git -C ~/.vim/bundle clone https://github.com/preservim/nerdtree
-		git -C ~/.vim/bundle clone https://github.com/tpope/vim-surround
-		git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
-		echo "-- Copying dotfiles..."
-		cd "$initDir" || exit
-		cp ./configs/vimrc ~/.vimrc
-		;;
-	[Nn]* )
-		;;
-esac
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    setup_vim
+fi
 
 read -rp "Setup tmux? [y/n] " yn
-case $yn in
-	[Yy]* ) 
-		echo "--  Installing dotfile to home directory..."
-		cd "$initDir" || exit
-		cp ./configs/tmux.conf ~/.tmux.conf
-		;;
-	[Nn]* )
-		;;
-esac
-
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+    setup_tmux
+fi
 
