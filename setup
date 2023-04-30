@@ -24,7 +24,7 @@ case $yn in
 		git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
 		echo "-- Copying dotfiles..."
 		cd "$initDir" || exit
-		cp ./configs/.vimrc ~
+		cp ./configs/vimrc ~/.vimrc
 		;;
 	[Nn]* )
 		;;
@@ -35,7 +35,7 @@ case $yn in
 	[Yy]* ) 
 		echo "--  Installing dotfile to home directory..."
 		cd "$initDir" || exit
-		cp ./configs/.tmux.conf ~ 
+		cp ./configs/tmux.conf ~/.tmux.conf
 		;;
 	[Nn]* )
 		;;
