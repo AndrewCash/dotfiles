@@ -1,44 +1,86 @@
 #!/bin/bash
-initDir=$(pwd)
+#
 
-read -pr "Add aliases? [y/n]" yn
-case $yn in
-    [Yy]* ) 
-        echo "-- Copying aliases..."
-        cd "$initDir" || exit
-        cp ./configs/.aliases ~
-        ;;
-    [Nn]* )
-        ;;
-esac
+# Define variables
+INIT_DIR=$(pwd)
+ALIASES_DIR=./configs/.aliases
+VIMRC=./configs/vimrc
+TMUX_CONF=./configs/tmux.conf
+VIM_BUNDLE_DIR=~/.vim/bundle
 
-read -pr "Setup vim? [y/n]" yn
-case $yn in
-    [Yy]* ) 
-        echo "-- Installing vim pathogen..."
-            mkdir -p ~/.vim/autoload ~/.vim/bundle
-            curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-        echo "-- Cloning vim packages..." 
-            git -C ~/.vim/bundle clone https://github.com/preservim/nerdtree
-            git -C ~/.vim/bundle clone https://github.com/tpope/vim-surround
-            git -C ~/.vim/bundle clone https://github.com/altercation/vim-colors-solarized
-        echo "-- Copying dotfiles..."
-            cd "$initDir" || exit
-            cp ./configs/.vimrc ~
-        ;;
-    [Nn]* )
-        ;;
-esac
+# Define functions
+function copy_aliases {
+    echo "-- Copying aliases..."
+    cd "$INIT_DIR" || exit
+    cp "$ALIASES_DIR" ~
+}
 
-read -pr "Setup tmux? [y/n]" yn
-case $yn in
-    [Yy]* ) 
-        echo "--  Installing dotfile to home directory..."
-        cd "$initDir" || exit
-        cp ./configs/.tmux.conf ~ 
-        ;;
-    [Nn]* )
-        ;;
-esac
+function setup_vim {
+    echo "-- Installing regular vim configs"
+    echo " -- Installing vim pathogen..."
+    mkdir -p ~/.vim/autoload ~/.vim/bundle
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo " -- Cloning vim packages..."
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/preservim/nerdtree
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/tpope/vim-surround
+    git -C "$VIM_BUNDLE_DIR" clone https://github.com/altercation/vim-colors-solarized
+    echo " -- Copying dotfiles..."
+    cd "$INIT_DIR" || exit
+    cp "$VIMRC" ~/.vimrc
+}
+function setup_nvim {
+    echo "-- Installing neovim configs"
+    mkdir -p ~/.config/nvim
+    cp -r ./configs/nvim ~/.config/
+}
 
+function setup_tmux {
+    echo "-- Installing tmux config"
+    cd "$INIT_DIR" || exit
+    cp "$TMUX_CONF" ~/.tmux.conf
+}
+
+# Parse command-line arguments
+while getopts ":vnt" opt; do
+  case $opt in
+    v)
+      setup_vim
+      ;;
+    n)
+      setup_nvim
+      ;;
+    t)
+      setup_tmux
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+# If no options are specified, prompt the user
+if [[ $OPTIND -eq 1 ]]; then
+    read -rp "Add aliases? [y/n] " yn
+    if [[ "$yn" =~ ^[Yy]$ ]]; then
+        copy_aliases
+    fi
+
+    read -rp "Setup vim? [y/n] " yn
+    if [[ "$yn" =~ ^[Yy]$ ]]; then
+        setup_vim
+    fi
+
+    read -rp "Setup tmux? [y/n] " yn
+    if [[ "$yn" =~ ^[Yy]$ ]]; then
+        setup_tmux
+    fi
+fi
+
+# Shift the option index so that positional parameters can be used
+shift $((OPTIND -1))
 
