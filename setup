@@ -40,8 +40,13 @@ function setup_tmux {
     cp "$TMUX_CONF" ~/.tmux.conf
 }
 
+function setup_bash_git_branch {
+    echo "-- Adding git branch to bash prompt"
+    cat ./configs/bash_git_branch.conf >> ~/.bashrc
+}
+
 # Parse command-line arguments
-while getopts ":vnt" opt; do
+while getopts ":vntg" opt; do
   case $opt in
     v)
       setup_vim
@@ -51,6 +56,9 @@ while getopts ":vnt" opt; do
       ;;
     t)
       setup_tmux
+      ;;
+    g)
+      setup_bash_git_branch
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
