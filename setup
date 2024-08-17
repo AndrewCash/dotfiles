@@ -45,8 +45,13 @@ function setup_bash_git_branch {
     cat ./configs/bash_git_branch.conf >> ~/.bashrc
 }
 
+function setup_global_gitignore {
+    echo "-- Adding global gitignore"
+    cp ./configs/gitignore ~/.gitignore
+}
+
 # Parse command-line arguments
-optspec=":vntg:"
+optspec=":vntgi:"
 while getopts "$optspec" optchar; do
   case "$optchar" in
 
@@ -59,6 +64,8 @@ while getopts "$optspec" optchar; do
       setup_tmux;;
     g)
       setup_bash_git_branch;;
+    i)
+      setup_global_gitignore;;
 
   esac
 done
@@ -78,6 +85,11 @@ if [[ $OPTIND -eq 1 ]]; then
     read -rp "Setup tmux? [y/n] " yn
     if [[ "$yn" =~ ^[Yy]$ ]]; then
         setup_tmux
+    fi
+
+    read -rp "Setup global gitignore? [y/n] " yn
+    if [[ "$yn" =~ ^[Yy]$ ]]; then
+        setup_global_gitignore
     fi
 fi
 
