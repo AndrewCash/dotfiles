@@ -57,6 +57,9 @@
   :config
   (ivy-mode 1))
 
+(use-package nerd-icons
+  :custom (nerd-icons-font-family "Symbols Nerd Font Mono"))
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
