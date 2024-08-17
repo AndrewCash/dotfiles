@@ -7,8 +7,6 @@
 
 (menu-bar-mode -1)         ; Disable menu bar
 
-(global-display-line-numbers-mode 1)
-
 (setq visible-bell t)      ; Set up visible bell
 
 ;(set-face-attribute 'default nil :font "Fira Code Retina" :height 200)
@@ -35,6 +33,16 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+;; Disable line numbers for some modes
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (use-package command-log-mode)
 
@@ -63,4 +71,4 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+  :custom ((doom-modeline-height 25)))
