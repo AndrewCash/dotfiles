@@ -9,10 +9,6 @@
 
 (setq visible-bell t)      ; Set up visible bell
 
-;(set-face-attribute 'default nil :font "Fira Code Retina" :height 200)
-
-(load-theme 'wombat)
-
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
