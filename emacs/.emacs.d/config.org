@@ -267,6 +267,13 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
   (gptel-make-anthropic "Claude"
     :stream t
     :key "your-api-key")
+** Flycheck
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :config
+    (add-hook 'after-init-hook #'global-flycheck-mode))
+
 #+end_src
 
 * Reading
