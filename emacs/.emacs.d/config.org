@@ -264,6 +264,14 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
     :hook (prog-mode . rainbow-delimiters-mode))
 
 #+end_src
+** LLM
+#+begin_src emacs-lisp
+  (use-package gptel)
+
+  (gptel-make-anthropic "Claude"
+    :stream t
+    :key "your-api-key")
+#+end_src
 
 * Reading
 ** Epub Reader
