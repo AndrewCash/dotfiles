@@ -265,3 +265,14 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
     :hook (prog-mode . rainbow-delimiters-mode))
 
 #+end_src
+
+* Reading
+** Epub Reader
+#+begin_src emacs-lisp
+  (use-package nov)
+  (setq nov-text-width t)
+  (setq visual-fill-column-center-text t)
+  (add-hook 'nov-mode-hook 'visual-line-mode)
+  (add-hook 'nov-mode-hook 'visual-fill-column-mode)
+
+#+end_src
