@@ -1,8 +1,10 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
+/build
+/debug
+/doc/tags
 foo.*
 *.log
-data
+node_modules
+/.repro
+/.tests
+tt.*
+lazyvim.json

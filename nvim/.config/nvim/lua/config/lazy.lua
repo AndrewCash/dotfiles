@@ -50,4 +50,23 @@ require("lazy").setup({
       },
     },
   },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  },
+
+  "mbbill/undotree",
+  "tpope/vim-fugitive",
+
+  -- lsp stuff
+  "neovim/nvim-lspconfig",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  -- { "neovim/nvim-lspconfig" },
+  -- { "hrsh7th/cmp-nvim-lsp" },
+  -- { "hrsh7th/nvim-cmp" },
 })
