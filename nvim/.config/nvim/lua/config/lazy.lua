@@ -62,27 +62,13 @@ require("lazy").setup({
   "mbbill/undotree",
   "tpope/vim-fugitive",
 
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v2.x",
-    dependencies = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" }, -- Required
-      { -- Optional
-        "williamboman/mason.nvim",
-        build = function()
-          pcall(vim.cmd, "MasonUpdate")
-        end,
-      },
-      { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" }, -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "L3MON4D3/LuaSnip" }, -- Required
-    },
-  },
-
+  -- lsp stuff
+  "neovim/nvim-lspconfig",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  -- { "neovim/nvim-lspconfig" },
+  -- { "hrsh7th/cmp-nvim-lsp" },
+  -- { "hrsh7th/nvim-cmp" },
   {
     "rose-pine/neovim",
     as = "rose-pine",
