@@ -50,4 +50,56 @@ require("lazy").setup({
       },
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
+    -- or                            , branch = '0.1.x',
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  },
+
+  -- use('nvim-tresitter/playground')
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  "mbbill/undotree",
+  "tpope/vim-fugitive",
+
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v2.x",
+    dependencies = {
+      -- LSP Support
+      { "neovim/nvim-lspconfig" }, -- Required
+      { -- Optional
+        "williamboman/mason.nvim",
+        build = function()
+          pcall(vim.cmd, "MasonUpdate")
+        end,
+      },
+      { "williamboman/mason-lspconfig.nvim" }, -- Optional
+
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" }, -- Required
+      { "hrsh7th/cmp-nvim-lsp" }, -- Required
+      { "L3MON4D3/LuaSnip" }, -- Required
+    },
+  },
+
+  {
+    "rose-pine/neovim",
+    as = "rose-pine",
+    config = function()
+      vim.cmd("colorscheme rose-pine")
+    end,
+  },
 })
