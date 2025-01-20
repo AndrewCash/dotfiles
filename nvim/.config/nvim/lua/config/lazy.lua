@@ -65,7 +65,6 @@ require("lazy").setup({
     end,
   },
 
-  -- use('nvim-tresitter/playground')
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
