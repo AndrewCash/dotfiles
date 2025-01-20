@@ -69,11 +69,4 @@ require("lazy").setup({
   -- { "neovim/nvim-lspconfig" },
   -- { "hrsh7th/cmp-nvim-lsp" },
   -- { "hrsh7th/nvim-cmp" },
-  {
-    "rose-pine/neovim",
-    as = "rose-pine",
-    config = function()
-      vim.cmd("colorscheme rose-pine")
-    end,
-  },
 })
