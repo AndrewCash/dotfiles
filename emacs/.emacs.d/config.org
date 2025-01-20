@@ -75,7 +75,7 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-gruvbox t)
+  (load-theme 'doom-palenight t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -220,7 +220,6 @@ These icons are required to make the modeline package display correctly.
     :hook (org-mode . olivetti-mode)
     :config
     (setq olivetti-body-width 120))  ; Adjust the width as needed
-
 #+end_src
 
 ** Configure Babel Languages
@@ -265,7 +264,7 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
         ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
         (setq lsp-keymap-prefix "C-c l")
         :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-               (XXX-mode . lsp)
+               (go-mode . lsp)
                ;; if you want which-key integration
                (lsp-mode . lsp-enable-which-key-integration))
         :commands lsp)
@@ -285,6 +284,9 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
           :config
           (which-key-mode))
 #+end_src
+
+#+RESULTS:
+: t
 
 *** Python
 #+begin_src emacs-lisp
@@ -307,6 +309,20 @@ Read more about Structure Templates in Org Mode manual [[https://orgmode.org/man
     :config
     (pyvenv-mode 1))
 #+end_src
+
+*** Javascript / Typescript
+#+begin_src  emacs-lisp
+
+  (use-package typescript-mode)
+
+  (use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter)
+
+#+end_src
+
+#+RESULTS:
+
 ** Company Mode
 ** Projectile
 ** Rainbow Delimiters
