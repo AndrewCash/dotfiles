@@ -3,6 +3,7 @@
     home = {
         packages = with pkgs; [
             hello
+            neovim
         ];
     username = "andrew";
     homeDirectory = "/home/andrew";
