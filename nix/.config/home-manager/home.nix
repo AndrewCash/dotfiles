@@ -5,6 +5,8 @@
             hello
             neovim
             nerdfonts
+            fzf
+            
         ];
     username = "andrew";
     homeDirectory = "/home/andrew";
