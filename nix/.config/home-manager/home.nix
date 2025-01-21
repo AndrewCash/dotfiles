@@ -4,6 +4,7 @@
         packages = with pkgs; [
             hello
             neovim
+            nerdfonts
         ];
     username = "andrew";
     homeDirectory = "/home/andrew";
