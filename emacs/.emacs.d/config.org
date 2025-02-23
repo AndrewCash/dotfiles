@@ -181,6 +181,12 @@ These icons are required to make the modeline package display correctly.
   
 #+end_src
 
+* Git
+** Magit
+#+begin_src emacs-lisp
+(use-package magit)
+#+end_src
+
 * Org Mode
 ** Basic Org Config
 #+begin_src emacs-lisp
