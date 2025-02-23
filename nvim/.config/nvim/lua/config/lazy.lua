@@ -62,14 +62,6 @@ require("lazy").setup({
   "mbbill/undotree",
   "tpope/vim-fugitive",
 
-  --  -- lsp stuff
-  --  "neovim/nvim-lspconfig",
-  --  "hrsh7th/nvim-cmp",
-  --  "hrsh7th/cmp-nvim-lsp",
-  --  -- { "neovim/nvim-lspconfig" },
-  --  -- { "hrsh7th/cmp-nvim-lsp" },
-  --  -- { "hrsh7th/nvim-cmp" },
-  --
   {
     {
       "williamboman/mason.nvim",
@@ -148,6 +140,7 @@ require("lazy").setup({
         require("mason-lspconfig").setup({
           ensure_installed = {},
           handlers = {
+
             -- this first function is the "default handler"
             -- it applies to every language server without a "custom handler"
             function(server_name)
